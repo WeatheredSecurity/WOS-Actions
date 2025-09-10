@@ -118,7 +118,8 @@ function install_pkg() {
         grub-efi-amd64-signed \
         shim-signed \
         mtools \
-        binutils
+        binutils \
+        gpg
     
     case $TARGET_UBUNTU_VERSION in
         "focal" | "bionic")
@@ -147,9 +148,9 @@ function install_pkg() {
     wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
     echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/release/jammy jammy main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
     apt update
-    apt install kismet
+    apt install -y kismet
 
-    
+
 
     # Call into config function
     customize_image
