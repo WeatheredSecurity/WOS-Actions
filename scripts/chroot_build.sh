@@ -118,8 +118,8 @@ function install_pkg() {
         grub-efi-amd64-signed \
         shim-signed \
         mtools \
-        binutils \
-        gpg
+        binutils
+
     
     case $TARGET_UBUNTU_VERSION in
         "focal" | "bionic")
@@ -143,6 +143,14 @@ function install_pkg() {
 
 
     ## BEGIN WOS PACKAGES
+    # Basic weathered utils
+    apt-get install -y \
+        gpg \
+        libvolk2-bin \
+        htop \
+        btop \
+        jq \
+        aircrack-ng
 
     # Kismet
     wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
@@ -150,6 +158,11 @@ function install_pkg() {
     apt update
     apt install -y kismet
 
+    # Blade RF cli
+    add-apt-repository ppa:nuandllc/bladerf
+    apt-get update
+    apt-get install -y bladerf
+    apt-get install -y libbladerf-dev
 
 
     # Call into config function
