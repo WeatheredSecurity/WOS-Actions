@@ -140,6 +140,17 @@ function install_pkg() {
         ubiquity-slideshow-ubuntu \
         ubiquity-ubuntu-artwork
 
+
+    ## BEGIN WOS PACKAGES
+
+    # Kismet
+    wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
+    echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/release/jammy jammy main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
+    apt update
+    apt install kismet
+
+    
+
     # Call into config function
     customize_image
 
@@ -159,6 +170,7 @@ dns=systemd-resolved
 [ifupdown]
 managed=false
 EOF
+
 
     dpkg-reconfigure network-manager
 
