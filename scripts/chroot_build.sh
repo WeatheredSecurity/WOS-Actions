@@ -144,6 +144,9 @@ function install_pkg() {
 
     ## BEGIN WOS PACKAGES
 
+    echo "===== BEGINNING WOS Packages ====="
+    ls
+
     apt-get update
     apt update
     # Basic weathered utils
@@ -176,11 +179,11 @@ function install_pkg() {
     apt-get install -y libbladerf-dev
 
     # Prepare for ice9-bt
-    sudo apt install \
-    libliquid-dev \
-    libhackrf-dev \
-    libuhd-dev \
-    libfftw3-dev
+    #sudo apt install \
+    #libliquid-dev \
+    #libhackrf-dev \
+    #libuhd-dev \
+    #libfftw3-dev
 
 
     # Call into config function
