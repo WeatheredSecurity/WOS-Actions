@@ -179,11 +179,15 @@ function install_pkg() {
     apt-get install -y libbladerf-dev
 
     # Prepare for ice9-bt
-    #sudo apt install \
-    #libliquid-dev \
-    #libhackrf-dev \
-    #libuhd-dev \
-    #libfftw3-dev
+    sudo apt install \
+    libliquid-dev \
+    libhackrf-dev \
+    libuhd-dev \
+    libfftw3-dev
+    cd /usr
+
+
+    cd /
 
 
     # Call into config function
