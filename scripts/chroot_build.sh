@@ -156,8 +156,7 @@ function install_pkg() {
         aircrack-ng \
         gpsd \
         airspy \
-        gnuradio \
-        gr-gsm
+        gnuradio
 
     # Useful user tools
     apt-get install -y \
@@ -175,6 +174,13 @@ function install_pkg() {
     # Blade RF cli
     apt-get install -y bladerf
     apt-get install -y libbladerf-dev
+
+    # Prepare for ice9-bt
+    sudo apt install \
+    libliquid-dev \
+    libhackrf-dev \
+    libuhd-dev \
+    libfftw3-dev
 
 
     # Call into config function
