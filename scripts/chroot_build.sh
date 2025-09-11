@@ -150,7 +150,16 @@ function install_pkg() {
         htop \
         btop \
         jq \
-        aircrack-ng
+        aircrack-ng \
+        gpsd \
+        airspy \
+        gnuradio
+
+    # Useful user tools
+    apt-get install -y \
+        neofetch \
+        vlc \
+        git
 
     # Kismet
     wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
