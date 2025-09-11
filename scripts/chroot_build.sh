@@ -153,7 +153,8 @@ function install_pkg() {
         aircrack-ng \
         gpsd \
         airspy \
-        gnuradio
+        gnuradio \
+        gr-gsm
 
     # Useful user tools
     apt-get install -y \
