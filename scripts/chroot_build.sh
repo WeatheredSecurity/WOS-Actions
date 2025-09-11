@@ -143,6 +143,9 @@ function install_pkg() {
 
 
     ## BEGIN WOS PACKAGES
+
+    apt-get update
+    apt update
     # Basic weathered utils
     apt-get install -y \
         gpg \
