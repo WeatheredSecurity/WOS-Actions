@@ -145,7 +145,6 @@ function install_pkg() {
     ## BEGIN WOS PACKAGES
 
     echo "===== BEGINNING WOS Packages ====="
-    ls
 
     apt-get update
     apt update
