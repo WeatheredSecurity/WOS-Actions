@@ -159,7 +159,11 @@ function install_pkg() {
         aircrack-ng \
         gpsd \
         airspy \
-        gnuradio
+        gnuradio \
+        wireshark \
+        tshark \
+        gqrx-sdr \
+        rtl-433
 
     # Useful user tools
     apt-get install -y \
