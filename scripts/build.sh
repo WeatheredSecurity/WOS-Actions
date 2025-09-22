@@ -48,7 +48,8 @@ function chroot_enter_setup() {
     sudo mount --bind /run chroot/run
     sudo mkdir -p chroot/etc/WOS-Toolkit/{images,scripts}
 
-    #sudo cp ../weathered-tk/WeatheredShield-Dark-theme.jpg chroot/etc/WOS-Toolkit/images
+    sudo cp ../weathered-tk/WeatheredShield-Dark-theme.jpg chroot/etc/WOS-Toolkit/images
+    sudo cp ../weathered-tk/kismet-autoconfig chrrot/etc/WOS-Toolkit/dcripts
     sudo chroot chroot mount none -t proc /proc
     sudo chroot chroot mount none -t sysfs /sys
     sudo chroot chroot mount none -t devpts /dev/pts

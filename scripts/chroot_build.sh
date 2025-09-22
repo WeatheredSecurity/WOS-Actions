@@ -179,12 +179,21 @@ function install_pkg() {
     apt-get install -y libbladerf-dev
 
     # Prepare for ice9-bt
+    mkdir -p /usr/weathered-tools
     sudo apt install \
     libliquid-dev \
     libhackrf-dev \
     libuhd-dev \
-    libfftw3-dev
-    cd /usr
+    libfftw3-dev \
+    cmake
+    cd /usr/weathered-tools
+    git clone https://github.com/mikeryan/ice9-bluetooth-sniffer.git
+    cd ./ice9-bluetooth-sniffer
+    mkdir build
+    cd build
+    cmake ..
+    make
+    make install
 
 
     cd /
