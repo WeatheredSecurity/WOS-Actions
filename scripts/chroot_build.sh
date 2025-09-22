@@ -180,7 +180,7 @@ function install_pkg() {
 
     # Prepare for ice9-bt
     mkdir -p /usr/weathered-tools
-    sudo apt install \
+    sudo apt install -y \
     libliquid-dev \
     libhackrf-dev \
     libuhd-dev \
