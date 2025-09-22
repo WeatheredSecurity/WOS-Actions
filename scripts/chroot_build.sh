@@ -188,7 +188,8 @@ function install_pkg() {
     libhackrf-dev \
     libuhd-dev \
     libfftw3-dev \
-    cmake
+    cmake \
+    xxd
     cd /usr/weathered-tools
     git clone https://github.com/mikeryan/ice9-bluetooth-sniffer.git
     cd ./ice9-bluetooth-sniffer
